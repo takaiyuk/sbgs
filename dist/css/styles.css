@@ -11556,7 +11556,7 @@ body {
   border: 0;
 }
 
-.masthead {
+/* .masthead {
   position: relative;
   width: 100%;
   height: auto;
@@ -11567,16 +11567,16 @@ body {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-}
+} */
 .masthead h1, .masthead .h1 {
   font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 2.5rem;
   line-height: 2.5rem;
   letter-spacing: 0.8rem;
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  /* background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-          background-clip: text;
+          background-clip: text; */
 }
 .masthead h2, .masthead .h2 {
   max-width: 20rem;
@@ -11603,13 +11603,60 @@ body {
     font-size: 1.25rem;
   }
 }
+.masthead {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+.masthead video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.masthead .container {
+  position: relative;
+  z-index: 2;
+}
+.masthead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+/* Media Query for devices withi coarse pointers and no hover functionality */
+/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+@media (pointer: coarse) and (hover: none) {
+  .masthead {
+    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+  }
+  .masthead video {
+    display: none;
+  }
+}
 
 .about-section {
   padding-top: 10rem;
-  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+  /* background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%); */
 }
 .about-section p {
-  margin-bottom: 5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .projects-section {
@@ -11639,7 +11686,7 @@ body {
   }
 }
 
-.signup-section {
+/* .signup-section {
   padding: 10rem 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../assets/img/bg-signup.jpg");
   background-position: center;
@@ -11656,6 +11703,13 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   border: 0;
+} */
+.signup-section {
+  padding: 10rem 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
 }
 
 .contact-section {
@@ -11693,6 +11747,42 @@ body {
 }
 .contact-section .social a:active {
   color: #fff;
+}
+
+.services-section h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.services-section h3 {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+.services-section h4 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.services-section p {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.company-section .row {
+  margin-top: 5rem;
+  margin-bottom: 0.5rem;
+}
+.company-section h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.company-section .table td {
+  text-align: left;
+}
+.company-section .message-body {
+  text-align: left;
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 .footer {
