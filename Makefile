@@ -1,4 +1,4 @@
-.PHONY: install generate open
+.PHONY: install generate open lint format
 
 install:
 	poetry install
